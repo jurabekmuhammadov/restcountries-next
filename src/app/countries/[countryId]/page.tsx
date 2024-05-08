@@ -4,7 +4,12 @@ import { ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
-const CountryDetail = ({ params }) => {
+interface CountryDetailsProps {
+    params: {
+        countryId: number
+    }
+}
+const CountryDetail = ({ params }: CountryDetailsProps) => {
     const router = useRouter();
 
     const countryDetail = countries.filter((c) => c.id === Number(params.countryId));
@@ -12,10 +17,11 @@ const CountryDetail = ({ params }) => {
     return (
         <div className="container px-3 mx-auto mt-20 flex flex-col gap-20 sm:px-0 h-screen">
             <div>
-                <button onClick={() => router.back()} className="flex items-center gap-1 cursor-pointer border border-gray-400 p-1 rounded-lg dark:text-white">
+                <button onClick={() => router.back()} className="flex items-center gap-1 py-2.5 px-3 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     <ArrowLeft size={20} />
                     Back
                 </button>
+
             </div>
             <div className="flex flex-col items-start gap-10 md:gap-20 md:flex-col md:items-start lg:gap-20 lg:flex-row lg:items-center xl:gap-32 dark:text-white">
                 <div className="">
