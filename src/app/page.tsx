@@ -7,6 +7,7 @@ export default function Home() {
       <div className="w-full flex flex-col items-center justify-center gap-2 sm:flex sm:flex-row sm:justify-between sm:items-center">
         <SearchField />
         <FilterField />
+        h
       </div>
     </section>
   );
