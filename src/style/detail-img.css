@@ -1,0 +1,10 @@
+.detail-image-container {
+  width: 600px;
+  height: 350px;
+}
+
+.detail-image-container .detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

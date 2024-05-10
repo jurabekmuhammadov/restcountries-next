@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import "../style/card-img.css"
 
 interface CardProps {
     params: {
@@ -19,27 +20,8 @@ const Card = ({ params }: CardProps) => {
     return (
         <Link href={`/countries/${commonName}`} key={commonName} className="bg-white flex flex-col items-start justify-start rounded-lg overflow-hidden cursor-pointer dark:bg-slate-800 dark:text-white">
             <div className="image-container">
-                <Image alt={img} src={img} width={384} height={208} className="image w-96 h-52" />
+                <Image alt={img} src={img} width={384} height={208} className="image" />
             </div>
-            <style jsx>{`
-             .image-container {
-                width: 400px;
-                height: 200px;
-                overflow: hidden;
-            }
-        
-            .image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center center;
-            }
-            @media screen and (max-width: 640px){
-                .image-container {
-                    height: 130px;
-                }
-            }
-            `}</style>
             <div className="px-4 mt-4 pb-8 xl:px-6 xl:mt-6 xl:pb-11">
                 <h3 className="font-bold sm:text-lg md:text-xl">{commonName}</h3>
                 <div className="flex flex-col gap-1 mt-4">

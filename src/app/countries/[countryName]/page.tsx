@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import useCountryDetails from "@/hooks/useCountryDetail";
+import "../../../style/detail-img.css"
 
 interface CountryDetailsProps {
     params: {
@@ -28,8 +29,8 @@ const CountryDetail = ({ params }: CountryDetailsProps) => {
 
             </div>
             <div className="flex flex-col items-start gap-10 md:gap-20 md:flex-col md:items-start lg:gap-20 lg:flex-row lg:items-center xl:gap-32 dark:text-white">
-                <div className="">
-                    <Image src={country.flags.svg} alt="germany" width={600} height={300} className="rounded-xl" />
+                <div className="detail-image-container">
+                    <Image src={country.flags.svg} alt="germany" width={600} height={350} className="rounded-xl detail-image" />
                 </div>
                 <div className="flex flex-col gap-5 sm:gap-10 sm:flex-row">
                     <div className="flex flex-col gap-2">
